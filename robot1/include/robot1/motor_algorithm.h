@@ -9,14 +9,14 @@
 #define motor1_IN1 26
 #define motor1_PWM 12
 
-#define motor1_FG1 6 //22
+#define motor1_FG1 6 
 #define motor1_FG2 5
 
 
 #define motor2_IN1 19
 #define motor2_PWM 13
 
-#define motor2_FG1 22 //23
+#define motor2_FG1 22 
 #define motor2_FG2 27
 
 
@@ -53,7 +53,6 @@ class TrajectoryGenerator
 
 
 //ros communication
-ros::Publisher  angle_control_done_pub;
 ros::Publisher  desired_rpm1_pub;
 ros::Publisher  desired_rpm2_pub;
 
@@ -88,7 +87,7 @@ void initialize();
 void algorithm(double angle, double distance);
 void motor_control(int id, int motor_line1, int mode, bool direction, int desired_speed_rpm, int angle, bool on_off);
 
-void motor_theta_dist_callback(const std_msgs::Float64MultiArray::ConstPtr& msg);
+void motor_test_callback(const std_msgs::Float64MultiArray::ConstPtr& msg);
 
 //timer
 void controlFunction(const ros::TimerEvent&);
